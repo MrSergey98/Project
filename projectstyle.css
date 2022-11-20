@@ -1,0 +1,48 @@
+body {
+    padding:0;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url('http://hb.bizmrg.com/fonts/montserrat/400.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/montserrat/400.woff') format('woff');
+}  
+
+.fullscreen-bg {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top:45%;
+}
+ 
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.6);
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+#Drupal {
+    margin-top: -2vh;
+}
+#Drupal, #sup-drupal, #Admin, #Prodvig, #Advertise, #About, #Projects, #Contacts {
+    margin-right: 2vh;
+}
+.menu {
+    display: flex;
+    width: 100%;
+    margin-top: 5vw;
+    text-align: center;
+}
