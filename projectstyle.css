@@ -63,6 +63,96 @@ body {
     align-items: center;
 }
 
+.exp_menu {
+    margin-left: 5%;
+    margin-top: -50px;
+}
+#exp_2, #exp_3 {
+    padding-top: 27px;
+}
+h1 {
+    margin: 0;
+}
+.competency {
+    width: 100%;
+    height: 85vh;
+    padding-left: 12%;
+    padding-top: 35px;
+    overflow: hidden;
+}
+.competency_img {
+    position: relative;
+    width: 170px;
+    margin-right: 150px;
+    margin-top: 75px;
+}
+.competency_img::after {
+    content: "";
+    background: url(img/drupal-coder.svg) no-repeat;
+    opacity: 0.1;
+    top: 10px;
+    left: -75px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-size: 700px; 
+}
+
+.exp-drupal {
+    width: 100%;
+    height: 85vh;
+    background: linear-gradient(to bottom right, rgb(4,6,19), rgb(29,31,43));
+    
+}
+
+.pod-drupal-flex {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-300px);
+    align-items: center;
+}
+.pod-drupal-flex-img {
+    display: flex;
+}
+#color-blue {
+    color: rgb(4,12,55);
+}
+#color-grey {
+    color: rgb(89, 106, 130);
+}
+#pod-support1, #pod-support2, #pod-support3, #pod-support4, #pod-support5, #pod-support6, #pod-support7, #pod-support8 {
+    width: 250px;
+    height: 300px;
+    border-radius: 1%;
+    margin: 3px;
+    padding-left: 15px;
+    border: .02px solid rgba(241, 241, 241, 0.705);
+}
+#pod-support1 {
+    background: url(img/support1.svg) no-repeat bottom right, white;
+}
+#pod-support2 {
+    background: url(img/support2.svg) no-repeat bottom right, white;
+}
+#pod-support3 {
+    background: url(img/support3.svg) no-repeat bottom right, white;
+}
+#pod-support4 {
+    background: url(img/support4.svg) no-repeat bottom right, white;
+}
+#pod-support5 {
+    background: url(img/support5.svg) no-repeat bottom right, white;
+}
+#pod-support6 {
+    background: url(img/support6.svg) no-repeat bottom right, white;
+}
+#pod-support7 {
+    background: url(img/support7.svg) no-repeat bottom right, white;
+}
+#pod-support8 {
+    background: url(img/support8.svg) no-repeat bottom right, white;
+}
 
 
 
