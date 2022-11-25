@@ -11,4 +11,25 @@ $(document).ready(function () {
             $("#one").css("border", "0px");
         }
     });
+
+    $("#slider_1").slick({
+        arrows: true,
+        dots: true,
+        slidesToScroll: 1,
+        slidesToShow: 6,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        accessibility: false, 
+    });
+    $("#slider_2").slick({
+        arrows: true,
+        dots: true,
+        slidesToScroll: 1,
+        slidesToShow: 6,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        accessibility: false,
+        centerMode: true,
+        variableWidth: true,
+    });
 });
