@@ -76,10 +76,18 @@ body {
 
 
 
+.Photo{
+    width: 250px;
+    height: 120px;
+    border-radius: 5px;
+}
 
-
-
-
+.Photo2{
+    width: 250px;
+    height: 120px;
+    border-radius: 5px;
+    margin-left: 4px;
+}
 
 
 
@@ -102,6 +110,8 @@ details > summary::marker {
 li{
     margin-bottom: 15px;
 }
+
+
 
 
 
