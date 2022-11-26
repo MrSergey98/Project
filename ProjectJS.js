@@ -13,17 +13,18 @@ $(document).ready(function () {
     });
 
     $("#slider_1").slick({
-        arrows: true,
-        dots: true,
+        arrows: false,
+        dots: false,
         slidesToScroll: 1,
         slidesToShow: 6,
         autoplay: true,
         autoplaySpeed: 3000,
         accessibility: false, 
+        variableWidth: true
     });
     $("#slider_2").slick({
-        arrows: true,
-        dots: true,
+        arrows: false,
+        dots: false,
         slidesToScroll: 1,
         slidesToShow: 6,
         autoplay: true,
@@ -32,4 +33,15 @@ $(document).ready(function () {
         centerMode: true,
         variableWidth: true,
     });
+    $("#slider_3").slick({
+        arrows: true,
+        dots: false,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        prevArrow: $('#prev'),
+        nextArrow: $('#next')
+    });
+    $("#slider_3").on('afterChange', function(event, slick, currentSlide){
+        $("#numb").text("0"+(currentSlide + 1));
+     });
 });
