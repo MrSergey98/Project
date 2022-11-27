@@ -180,6 +180,23 @@ h1 {
 
 
 
+#Team_flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.Team_elem {
+    text-align: center;
+}
+#Team_flex div img{
+    width: 230px;
+    height: 235px;
+}
+
+
+
 
 
 
