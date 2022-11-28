@@ -67,6 +67,14 @@ body {
     margin-top: 100px;
     padding-left: 15px; 
 }
+.exp_new{
+    border-left: 5px solid rgb(241,77,52);
+    width: 150px;
+    margin-right: 100px;
+    margin-top: 100px;
+    padding-left: 15px; 
+    color: rgb(89, 106, 130);
+}
 #tarif {
     width:200px;
     height: 50px;
@@ -130,10 +138,10 @@ h1 {
 .pod-drupal-flex-img {
     display: flex;
 }
-#color-blue {
+.color-blue {
     color: rgb(4,12,55);
 }
-#color-grey {
+.color-grey {
     color: rgb(89, 106, 130);
 }
 #pod-support1, #pod-support2, #pod-support3, #pod-support4, #pod-support5, #pod-support6, #pod-support7, #pod-support8 {
@@ -199,11 +207,11 @@ h1 {
 
 
 
-#List li{
+.List li{
     list-style-type: none;
 }
 
-#List li::before{
+.List li::before{
     content: url(img/ok.png);
 }
 
@@ -327,6 +335,7 @@ margin-left: 5px;
     width: 250px;
     height: 120px;
     border-radius: 5px;
+    margin-left: 4px;
 }
 
 .Photo2{
