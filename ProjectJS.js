@@ -1,19 +1,19 @@
 var document;
+var $;
 
 function Admin_menu_on() {
-    var m = document.getElementById("Admin-menu");
-    m.style.display = "block";
+    $("#Admin-menu").show(300);
 }
 
 function Admin_menu_leave() {
-    var m = document.getElementById("Admin-menu");
-    m.style.display = "none";
+  $("#Admin-menu").hide(300);
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var b = document.getElementById("Admin");
     b.addEventListener("mouseover", Admin_menu_on);
-    b.addEventListener("mouseleave", Admin_menu_leave)
+    b.addEventListener("mouseleave", Admin_menu_leave);
 });
 
 
