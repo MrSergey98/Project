@@ -1,3 +1,23 @@
+var document;
+
+function Admin_menu_on() {
+    var m = document.getElementById("Admin-menu");
+    m.style.display = "block";
+}
+
+function Admin_menu_leave() {
+    var m = document.getElementById("Admin-menu");
+    m.style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var b = document.getElementById("Admin");
+    b.addEventListener("mouseover", Admin_menu_on);
+    b.addEventListener("mouseleave", Admin_menu_leave)
+});
+
+
+
 $(document).ready(function () {
     var a = 0;
     $('#faq_id').click(function() {
