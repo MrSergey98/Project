@@ -37,13 +37,16 @@ body {
     z-index: 4;
 }
 .overlay > * {
-    margin-left: 12%;
+    margin-left: 6%;
 }
 #Drupal {
     margin-top: -2vh;
 }
-#Drupal, #sup-drupal, #Admin, #Prodvig, #Advertise, #About, #Projects, #Contacts {
+#Drupal, #sup-drupal, #Admin, #Prodvig, #Advertise, #About, #Projects {
     margin-right: 2vh;
+    transition: all .25s;
+}
+#Contacts{
     transition: all .25s;
 }
 #Drupal:hover, #sup-drupal:hover, #Admin:hover, #Prodvig:hover, #Advertise:hover, #About:hover, #Projects:hover, #Contacts:hover {
@@ -52,7 +55,7 @@ body {
 }
 .menu {
     display: flex;
-    width: 100%;
+    width: 94%;
     margin-top: 5vw;
     text-align: center;
 }
