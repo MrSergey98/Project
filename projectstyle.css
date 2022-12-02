@@ -49,7 +49,7 @@ body {
 #Contacts{
     transition: all .25s;
 }
-#Drupal:hover, #sup-drupal:hover, #Admin:hover, #Prodvig:hover, #Advertise:hover, #About:hover, #Projects:hover, #Contacts:hover {
+#Drupal:hover, #sup-drupal:hover, #Prodvig:hover, #Advertise:hover, #Projects:hover, #Contacts:hover {
     text-decoration: underline 5px rgb(241,77,52);
 
 }
@@ -179,7 +179,7 @@ h1 {
 #pod-support8 {
     background: url(img/support8.svg) no-repeat bottom right, white;
 }
-#Admin-menu {
+#Admin-menu, #About-menu {
     background: rgb(241,77,52);
     text-align: left;
     padding-top: 5px;
@@ -187,15 +187,16 @@ h1 {
     position: absolute;
     display: none;
 }
-.Admin-menu {
+.Admin-menu, .About-menu {
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 2px;
     padding-bottom: 2px;
     max-width:100%;
+    z-index: 5;
 }
-.Admin-menu:hover {
-    background: rgb(209, 48, 24);
+.Admin-menu:hover .About-menu:hover {
+    background-color: rgb(77, 62, 59);
     text-decoration: none;
 }
 

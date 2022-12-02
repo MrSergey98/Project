@@ -16,11 +16,23 @@ function Admin_menu_leave() {
     $("#Admin-menu").hide(300);
 }
 
+function About_menu_on() {
+    $("#About-menu").show(300);
+}
+
+function About_menu_leave() {
+    $("#About-menu").hide(300);
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var b = document.getElementById("Admin");
     b.addEventListener("mouseover", Admin_menu_on);
     b.addEventListener("mouseleave", Admin_menu_leave);
+    var b1 = document.getElementById("About");
+    b1.addEventListener("mouseover", About_menu_on);
+    b1.addEventListener("mouseleave", About_menu_leave);
+
 });
 
 
