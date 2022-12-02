@@ -193,10 +193,9 @@ h1 {
     padding-top: 2px;
     padding-bottom: 2px;
     max-width:100%;
-    z-index: 5;
 }
-.Admin-menu:hover .About-menu:hover {
-    background-color: rgb(77, 62, 59);
+.Admin-menu:hover, .About-menu:hover {
+    background: rgb(209, 48, 24);
     text-decoration: none;
 }
 
