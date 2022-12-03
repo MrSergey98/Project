@@ -324,12 +324,45 @@ li{
         display: none;
     }
 
-    #Razrab {
+    #Razrab{
+        width: 100%;
+        font-size: 10px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    #Razrab br{
         display: none;
     }
 
+    .raz_text{
+        font-size: 13px;
+        margin-left: 15px;
+        text-align: left;
+    }
+
+    #Razrab h1{
+        padding-left: 15px;
+        margin-bottom: 25px;
+    }
+
+    #Razrab h1 br{
+        display: none;
+    }
+
+    #Quality{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+    
+    .Quality_elem{
+        margin: auto;
+        width: 50vw;
+    }
+
     #Team{
-        width: 80%;
+        width: 85%;
         margin: auto;
         margin-bottom: 20px;
     }
@@ -352,6 +385,8 @@ li{
     }
 
     .Team_elem p{
+        margin-bottom: 0px;
+        margin-top: 8px;
         font-size: 12px;
     }
 
@@ -372,7 +407,7 @@ li{
     }
 
     .Team_elem{
-        width: 37vw;
+        width: 39vw;
     }
 
     #Case {
@@ -741,6 +776,36 @@ li{
 
 @media (min-width: 560px) {
 
+    .raz_text{
+        margin-left: 45px; 
+        margin-top: 10px;
+    }
+
+    #padding_elem_2, #padding_elem_1{
+        padding-left: 50px;
+    }
+
+    #Quality{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    
+    .Quality_elem{
+        width: 300px;
+    }
+
+    #Razrab{
+        margin: auto;
+        width: 900px; 
+        height: 400px;
+    }
+
+    #Razrab h1{
+        padding-left: 35px;
+        margin-bottom: 40px;
+    }
+
     #Team_flex{
         display: flex;
         flex-direction: row;
@@ -772,7 +837,7 @@ li{
 
     #Team{
         height: 800px; 
-        margin-bottom: 250px;
+        margin-bottom: 200px;
     }
 
     #Team h1{
@@ -785,7 +850,7 @@ li{
 
     .Team_elem{
         width: 300px; 
-        margin-bottom: 50px;
+        margin-bottom: 35px;
     }
 
     .Team_elem div{
