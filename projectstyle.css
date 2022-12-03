@@ -241,7 +241,12 @@ h1 {
     display: none;
     overflow: scroll;
 }
-
+#About-menu-mobile {
+    display: none;
+}
+#Admin-menu-mobile {
+    display: none;
+}
 @media(max-width: 560px) {
     .mobile-menu {
         display: block;
