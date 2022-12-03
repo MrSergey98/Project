@@ -323,18 +323,45 @@ $(document).ready(function () {
         $(".ui-card:nth-child(" + $odd + ")").prev().addClass("prev");
         $(".ui-card:nth-child(" + $odd + ")").next().addClass("next");
     }
-    $(".ui-card").click(function () {
-        $slide = $(".active").width();
-        console.log($(".active").position().left);
-        if ($(this).hasClass("next")) {
-            $(".container").stop(false, true).animate({left: "-=" + $slide});
-        } else if ($(this).hasClass("prev")) {
-            $(".container").stop(false, true).animate({left: "+=" + $slide});
-        }
-        $(this).removeClass("prev next");
-        $(this).siblings().removeClass("prev active next");
-        $(this).addClass("active");
-        $(this).prev().addClass("prev");
-        $(this).next().addClass("next");
-    });
+    let c = 1;
+$('.ui-card').click(function() {
+  $slide = $('.active').width();
+  console.log($('.active').position().left);
+  if ($(this).hasClass('next')) {
+    $('.container').stop(false, true).animate({left: '-=' + $slide});
+    c+=1;
+  } else if ($(this).hasClass('prev')) {
+    $('.container').stop(false, true).animate({left: '+=' + $slide});
+    c-=1;
+  }
+  if(c==0){
+    $("#but_1").css("background", "rgb(241, 77,52)");
+    $("#but_1").css("color", "white");
+    $("#but_2").css("color", "rgb(241, 77,52)");
+    $("#but_2").css("background", "white");
+    $("#but_3").css("color", "rgb(241, 77,52)");
+    $("#but_3").css("background", "white");
+  }else if(c==1){
+    $("#but_2").css("background", "rgb(241, 77,52)");
+    $("#but_2").css("color", "white");
+    $("#but_1").css("color", "rgb(241, 77,52)");
+    $("#but_1").css("background", "white");
+    $("#but_3").css("color", "rgb(241, 77,52)");
+    $("#but_3").css("background", "white");
+  }else if(c==2){
+    $("#but_3").css("background", "rgb(241, 77,52)");
+    $("#but_3").css("color", "white");
+    $("#but_2").css("color", "rgb(241, 77,52)");
+    $("#but_2").css("background", "white");
+    $("#but_1").css("color", "rgb(241, 77,52)");
+    $("#but_1").css("background", "white");
+  }
+
+  $(this).removeClass('prev next');
+  $(this).siblings().removeClass('prev active next');
+ 
+  $(this).addClass('active');
+  $(this).prev().addClass('prev');
+  $(this).next().addClass('next');
+});
 });
