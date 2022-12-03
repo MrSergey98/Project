@@ -283,24 +283,6 @@ h1 {
 
 
 
-
-#Team_flex{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.Team_elem {
-    text-align: center;
-}
-#Team_flex div img{
-    width: 230px;
-    height: 235px;
-}
-
-
-
 details > summary {
     list-style: none;
   }
@@ -346,8 +328,51 @@ li{
         display: none;
     }
 
-    #Team {
+    #Team{
+        width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    #Team button{
+        height: 30px; 
+        width: 35vw;
+        font-size: 10px;
+        font-weight: 700;
+        color: rgb(81, 80, 80);
+        vertical-align: middle;
+    }
+
+    .br_team_2{
         display: none;
+    }
+
+    .name_razrab{
+        font-size: 14px;
+    }
+
+    .Team_elem p{
+        font-size: 12px;
+    }
+
+    #Team h1{
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    #Team img{
+        width: 100%;
+    }
+
+    #Team_flex{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .Team_elem{
+        width: 37vw;
     }
 
     #Case {
@@ -715,6 +740,57 @@ li{
 }
 
 @media (min-width: 560px) {
+
+    #Team_flex{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    #Team button{
+        height: 50px; 
+        width: 150px;
+    }
+
+    .Team_elem {
+        text-align: center;
+    }
+
+    .name_razrab{
+        font-size: 20px;
+    }
+
+    .Team_elem p{
+        font-size: 14px;
+    }
+
+    #Team_flex div img{
+        width: 230px;
+        height: 235px;
+    }
+
+    #Team{
+        height: 800px; 
+        margin-bottom: 250px;
+    }
+
+    #Team h1{
+        margin-bottom: 60px;
+    }
+
+    #Team_flex{
+        width: 900px;
+    }
+
+    .Team_elem{
+        width: 300px; 
+        margin-bottom: 50px;
+    }
+
+    .Team_elem div{
+        width: 230px;
+    }
 
     #Case{
         width: 860px; 
