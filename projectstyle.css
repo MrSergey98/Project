@@ -301,35 +301,6 @@ h1 {
 
 
 
-
-
-
-#Case div{
-margin-left: 5px;
-}
-
-#Case_1, #Case_2{
-    display: flex;
-    flex-direction: row;
-}
-
-#Case_1_1{
-    flex: 2;
-    border-radius: 5px 5px;
-}
-
-#Case_1_2{
-    flex:4;
-}
-
-#Case_2_1, #Case_2_2, #Case_2_3{
-    margin: 0px;
-    padding: 0px;
-    flex: 1;
-}  
-
-
-
 details > summary {
     list-style: none;
   }
