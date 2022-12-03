@@ -248,6 +248,22 @@ function Mobile_menu() {
         cmm.hide(300);
 }
 
+function Admin_mobile() {
+    var admm = $("#Admin-menu-mobile");
+    if(admm.css("display") === "none")
+        admm.show(300);
+    else
+        admm.hide(300);
+}
+
+function About_mobile() {
+    var abmm = $("#About-menu-mobile");
+    if(abmm.css("display") === "none")
+        abmm.show(300);
+    else
+        abmm.hide(300);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var b = document.getElementById("Admin");
     b.addEventListener("mouseover", Admin_menu_on);
@@ -257,6 +273,11 @@ document.addEventListener("DOMContentLoaded", function () {
     b1.addEventListener("mouseleave", About_menu_leave);
     var mm = document.getElementById("click-mob-menu");
     mm.addEventListener("click", Mobile_menu);
+    var adm = document.getElementById("Admin-mobile");
+    adm.addEventListener("click", Admin_mobile);
+
+    var abm = document.getElementById("About-mobile");
+    abm.addEventListener("click", About_mobile);
 });
 
 
