@@ -263,24 +263,7 @@ h1 {
     pointer-events: auto;
     -webkit-transition: 1s;
     transition: 1s;
-  }
-
-
-
-
-
-
-#Quality{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
 }
-
-.Quality_elem{
-    width: 300px;
-}
-
-
 
 
 details > summary {
