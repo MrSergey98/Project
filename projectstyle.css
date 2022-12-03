@@ -233,11 +233,12 @@ h1 {
 .poz-mobile {
     height: 50px;
     padding-top: 15px;
-    padding-left: 15px;   
+    padding-left: 15px;
+    border-bottom: .5px solid rgb(146, 145, 145);
 }
 
 .click-menu-mobile {
-    height: 500px;
+    height: 470px;
     display: none;
     overflow: scroll;
 }
