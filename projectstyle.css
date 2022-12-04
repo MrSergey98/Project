@@ -258,6 +258,13 @@ h1 {
 .text-com {
     width: 500px;
 }
+.exp-with-lap {
+    display: flex;
+    height: 50%;
+}
+.exp-with-lap-mobile {
+    display: none;
+}
 
 
 
@@ -354,6 +361,41 @@ li{
 
 
 @media (max-width: 560px) {
+    .exp_new {
+        margin-top: 15px;
+        padding: 0;
+        width: 250px;
+        height: fit-content;
+    }
+    .exp-with-lap-mobile-info {
+        width:auto;
+    }
+    .exp-with-lap-mobile{
+        position: relative;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .exp-with-lap {
+        display: none;
+    }
+    .pod-support {
+        width: 300px;
+    }
+    .competency {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 4000px;
+        padding: 0;
+    }
+    .pod-drupal-flex {
+        transform: translateY(-2600px);
+    }
+    .pod-drupal-flex-img {
+        align-items: center;
+        flex-direction: column;
+    }
     .competency_img {
         margin: 0;
         padding: 15px;
@@ -425,16 +467,11 @@ li{
         display: block;
     }
 
-    .competency {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        height: 1500px;
-        padding: 0;
-    }
+    
 
     .exp-drupal {
-        display: none;
+        display: block;
+        margin: 0;
     }
 
     #Rate {
