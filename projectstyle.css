@@ -371,10 +371,16 @@ li{
         width:auto;
     }
     .exp-with-lap-mobile{
-        position: relative;
+        max-width: 100%;
+        position: absolute;
         bottom: 0;
         display: flex;
         flex-direction: column;
+    }
+    .exp-drupal {
+        display: block;
+        margin: 0;
+        position: relative;
     }
     .exp-with-lap {
         display: none;
@@ -465,13 +471,6 @@ li{
 
     header {
         display: block;
-    }
-
-    
-
-    .exp-drupal {
-        display: block;
-        margin: 0;
     }
 
     #Rate {
