@@ -334,7 +334,9 @@ details > summary::marker {
 li{
     margin-bottom: 15px;
 }
-
+.exp_menu_mobile {
+    display: none;
+}
 
 
 
@@ -348,9 +350,53 @@ li{
 
 
 @media (max-width: 560px) {
+    .fullscreen-bg__video {
+        height: 100%;
+        width: auto;
+    }
+    .exp_menu_mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .exp {
+        margin: 0;
+        margin-top: 30px;
+        padding: 0;
+        width: 150px;
+    }
+    .exp_menu {
+        display: none;
+    }
+    #exp_1, #exp_3, #exp_5 {
+        margin-right: 15px;
+    }
+    .fullscreen-bg {
+        height: 700px;
+    }
+    #tarif {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .menu {
+        display: none;
+    }
+    .menu_info {
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu_2 {
+        flex-direction: column;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
 
     header {
-        display: none;
+        display: block;
     }
 
     .competency {
