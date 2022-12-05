@@ -127,13 +127,6 @@ h1 {
     background-size: 700px; 
 }
 
-.exp-drupal {
-    width: 100%;
-    height: 1500px;
-    background: linear-gradient(to bottom right, rgb(4,6,19), rgb(29,31,43));
-    margin-bottom: 150px;
-}
-
 .pod-drupal-flex {
     display: flex;
     flex-direction: column;
@@ -362,7 +355,8 @@ li{
 
 @media (max-width: 560px) {
     .pod-drupal-flex > h1 {
-        font-size: 30px;
+        font-size: 26px;
+        margin-bottom: 35px;
     }
     .exp_new {
         margin-top: 15px;
@@ -384,6 +378,9 @@ li{
         display: block;
         margin: 0;
         position: relative;
+        width: 100%;
+        height: 1100px;
+        background: linear-gradient(to bottom right, rgb(4,6,19), rgb(29,31,43));
     }
     .exp-with-lap {
         display: none;
@@ -395,7 +392,7 @@ li{
         display: flex;
         flex-direction: column;
         text-align: center;
-        height: 4000px;
+        height: 3730px;
         padding: 0;
     }
     .pod-drupal-flex {
@@ -446,7 +443,7 @@ li{
     .exp_menu {
         display: none;
     }
-    #exp_1, #exp_3, #exp_5 {
+    #exp_1_m, #exp_3_m, #exp_5_m {
         margin-right: 15px;
     }
     .fullscreen-bg {
@@ -614,7 +611,7 @@ li{
     }
 
     #Case_2_1 img, #Case_2_2 img{
-        height: 30vh;
+        height: 57vh;
         margin-bottom: 15px;
     }
 
@@ -953,6 +950,13 @@ li{
 }
 
 @media (min-width: 560px) {
+    .exp-drupal {
+        width: 100%;
+        height: 1500px;
+        background: linear-gradient(to bottom right, rgb(4,6,19), rgb(29,31,43));
+        margin-bottom: 150px;
+    }
+
     .pod-drupal-flex > h1 {
         font-size: 50px;
     }
