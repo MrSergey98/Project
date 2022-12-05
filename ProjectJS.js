@@ -7,9 +7,9 @@ var console;
 var $slide;
 var g;
 var g1;
-
-
-
+var window;
+var ResizeSensor;
+var jQuery;
 
 function Admin_menu_on() {
     $("#Admin-menu").show(300);
@@ -29,41 +29,47 @@ function About_menu_leave() {
 
 function Mobile_menu() {
     var cmm = $("#click-menu-mobile");
-    if(cmm.css("display") === "none")
+    if (cmm.css("display") === "none") {
         cmm.show(300);
-    else
+    } else {
         cmm.hide(300);
+    }
 }
 
 function Admin_mobile() {
     var admm = $("#Admin-menu-mobile");
-    if(admm.css("display") === "none")
+    if (admm.css("display") === "none") {
         admm.show(300);
-    else
+    } else {
         admm.hide(300);
+    }
 }
 
 function About_mobile() {
     var abmm = $("#About-menu-mobile");
-    if(abmm.css("display") === "none")
+    if (abmm.css("display") === "none") {
         abmm.show(300);
-    else
+    } else {
         abmm.hide(300);
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    var b1;
+    var mm;
+    var adm;
+    var abm;
     var b = document.getElementById("Admin");
     b.addEventListener("mouseover", Admin_menu_on);
     b.addEventListener("mouseleave", Admin_menu_leave);
-    var b1 = document.getElementById("About");
+    b1 = document.getElementById("About");
     b1.addEventListener("mouseover", About_menu_on);
     b1.addEventListener("mouseleave", About_menu_leave);
-    var mm = document.getElementById("click-mob-menu");
+    mm = document.getElementById("click-mob-menu");
     mm.addEventListener("click", Mobile_menu);
-    var adm = document.getElementById("Admin-mobile");
+    adm = document.getElementById("Admin-mobile");
     adm.addEventListener("click", Admin_mobile);
-
-    var abm = document.getElementById("About-mobile");
+    abm = document.getElementById("About-mobile");
     abm.addEventListener("click", About_mobile);
 });
 
@@ -71,12 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 $(document).ready(function () {
+    var c;
     var a = 0;
     $("#Reviews").css("padding-bottom", $("#Com_1").height());
-    $(window).resize(function(){
-      new ResizeSensor(jQuery("#Com_1"), function(){
-        $("#Reviews").css("padding-bottom", $("#Com_1").height());
-      });
+    $(window).resize(function () {
+        new ResizeSensor(jQuery("#Com_1"), function () {
+            $("#Reviews").css("padding-bottom", $("#Com_1").height());
+        });
     });
     $("#faq_id").click(function () {
         a = a + 1;
@@ -137,44 +144,44 @@ $(document).ready(function () {
         $(".ui-card:nth-child(" + $odd + ")").prev().addClass("prev");
         $(".ui-card:nth-child(" + $odd + ")").next().addClass("next");
     }
-    let c = 1;
-$(".ui-card").click(function() {
-  $slide = $(".active").width();
-  console.log($(".active").position().left);
-  if ($(this).hasClass("next")) {
-    $(".container").stop(false, true).animate({left: "-=" + $slide});
-    c+=1;
-  } else if ($(this).hasClass("prev")) {
-    $(".container").stop(false, true).animate({left: "+=" + $slide});
-    c-=1;
-  }
-  if(c==0){
-    $("#but_1").css("background", "rgb(241, 77,52)");
-    $("#but_1").css("color", "white");
-    $("#but_2").css("color", "rgb(241, 77,52)");
-    $("#but_2").css("background", "white");
-    $("#but_3").css("color", "rgb(241, 77,52)");
-    $("#but_3").css("background", "white");
-  }else if(c==1){
-    $("#but_2").css("background", "rgb(241, 77,52)");
-    $("#but_2").css("color", "white");
-    $("#but_1").css("color", "rgb(241, 77,52)");
-    $("#but_1").css("background", "white");
-    $("#but_3").css("color", "rgb(241, 77,52)");
-    $("#but_3").css("background", "white");
-  }else if(c==2){
-    $("#but_3").css("background", "rgb(241, 77,52)");
-    $("#but_3").css("color", "white");
-    $("#but_2").css("color", "rgb(241, 77,52)");
-    $("#but_2").css("background", "white");
-    $("#but_1").css("color", "rgb(241, 77,52)");
-    $("#but_1").css("background", "white");
-  }
+    c = 1;
+    $(".ui-card").click(function () {
+        $slide = $(".active").width();
+        console.log($(".active").position().left);
+        if ($(this).hasClass("next")) {
+            $(".container").stop(false, true).animate({left: "-=" + $slide});
+            c += 1;
+        } else if ($(this).hasClass("prev")) {
+            $(".container").stop(false, true).animate({left: "+=" + $slide});
+            c -= 1;
+        }
+        if (c === 0) {
+            $("#but_1").css("background", "rgb(241, 77,52)");
+            $("#but_1").css("color", "white");
+            $("#but_2").css("color", "rgb(241, 77,52)");
+            $("#but_2").css("background", "white");
+            $("#but_3").css("color", "rgb(241, 77,52)");
+            $("#but_3").css("background", "white");
+        } else if (c === 1) {
+            $("#but_2").css("background", "rgb(241, 77,52)");
+            $("#but_2").css("color", "white");
+            $("#but_1").css("color", "rgb(241, 77,52)");
+            $("#but_1").css("background", "white");
+            $("#but_3").css("color", "rgb(241, 77,52)");
+            $("#but_3").css("background", "white");
+        } else if (c === 2) {
+            $("#but_3").css("background", "rgb(241, 77,52)");
+            $("#but_3").css("color", "white");
+            $("#but_2").css("color", "rgb(241, 77,52)");
+            $("#but_2").css("background", "white");
+            $("#but_1").css("color", "rgb(241, 77,52)");
+            $("#but_1").css("background", "white");
+        }
 
-  $(this).removeClass("prev next");
-  $(this).siblings().removeClass("prev active next");
-  $(this).addClass("active");
-  $(this).prev().addClass("prev");
-  $(this).next().addClass("next");
-});
+        $(this).removeClass("prev next");
+        $(this).siblings().removeClass("prev active next");
+        $(this).addClass("active");
+        $(this).prev().addClass("prev");
+        $(this).next().addClass("next");
+    });
 });
