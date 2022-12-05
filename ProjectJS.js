@@ -17,16 +17,12 @@ var g1;
   } else {
     root.ResizeSensor = factory();
   }
-}(this, function() {
-
-  // Make sure it does not throw in a SSR (Server Side Rendering) situation
+}(function() {
+  var requestAnimationFrame;
   if (typeof window === "undefined") {
     return null;
   }
-  // Only used for the dirty checking, so the event callback count is limited to max 1 call per fps per sensor.
-  // In combination with the event based resize sensor this saves cpu time, because the sensor is too fast and
-  // would generate too many unnecessary events.
-  var requestAnimationFrame = window.requestAnimationFrame ||
+  requestAnimationFrame = window.requestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     function(fn) {
@@ -41,19 +37,20 @@ var g1;
    */
   function forEachElement(elements, callback) {
     var elementsType = Object.prototype.toString.call(elements);
-    var isCollectionTyped = ('[object Array]' === elementsType ||
-      ('[object NodeList]' === elementsType) ||
-      ('[object HTMLCollection]' === elementsType) ||
-      ('[object Object]' === elementsType) ||
-      ('undefined' !== typeof jQuery && elements instanceof jQuery) //jquery
+    var isCollectionTyped = ("[object Array]" === elementsType ||
+      ("[object NodeList]" === elementsType) ||
+      ("[object HTMLCollection]" === elementsType) ||
+      ("[object Object]" === elementsType) ||
+      ("undefined" !== typeof jQuery && elements instanceof jQuery)
       ||
-      ('undefined' !== typeof Elements && elements instanceof Elements) //mootools
+      ("undefined" !== typeof Elements && elements instanceof Elements)
     );
-    var i = 0,
-      j = elements.length;
+    var i = 0;
+    var j = elements.length;
     if (isCollectionTyped) {
-      for (; i < j; i++) {
+       while (i < j) {
         callback(elements[i]);
+        i++;
       }
     } else {
       callback(elements);
@@ -114,23 +111,24 @@ var g1;
       element.resizedAttached = new EventQueue();
       element.resizedAttached.add(resized);
 
-      element.resizeSensor = document.createElement('div');
-      element.resizeSensor.className = 'resize-sensor';
-      var style = 'position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;';
-      var styleChild = 'position: absolute; left: 0; top: 0; transition: 0s;';
+      element.resizeSensor = document.createElement("div");
+      element.resizeSensor.className = "resize-sensor";
+      var style = "position: absolute; left: 0; top: 0; right: 0;" +
+          "bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;";
+      var styleChild = "position: absolute; left: 0; top: 0; transition: 0s;";
 
       element.resizeSensor.style.cssText = style;
       element.resizeSensor.innerHTML =
-        '<div class="resize-sensor-expand" style="' + style + '">' +
-        '<div style="' + styleChild + '"></div>' +
-        '</div>' +
-        '<div class="resize-sensor-shrink" style="' + style + '">' +
-        '<div style="' + styleChild + ' width: 200%; height: 200%"></div>' +
-        '</div>';
+        "<div class=\"resize-sensor-expand\" style=\"" + style + "\">" +
+        "<div style=\"" + styleChild + "\"></div>" +
+        "</div>" +
+        "<div class=\"resize-sensor-shrink\" style=\"" + style + "\">" +
+        "<div style=\"" + styleChild + " width: 200%; height: 200%\"></div>" +
+        "</div>";
       element.appendChild(element.resizeSensor);
 
       if (element.resizeSensor.offsetParent !== element) {
-        element.style.position = 'relative';
+        element.style.position = "relative";
       }
 
       var expand = element.resizeSensor.childNodes[0];
@@ -141,8 +139,8 @@ var g1;
       var lastHeight = element.offsetHeight;
 
       var reset = function() {
-        expandChild.style.width = '100000px';
-        expandChild.style.height = '100000px';
+        expandChild.style.width = "100000px";
+        expandChild.style.height = "100000px";
 
         expand.scrollLeft = 100000;
         expand.scrollTop = 100000;
@@ -180,14 +178,14 @@ var g1;
 
       var addEvent = function(el, name, cb) {
         if (el.attachEvent) {
-          el.attachEvent('on' + name, cb);
+          el.attachEvent("on" + name, cb);
         } else {
           el.addEventListener(name, cb);
         }
       };
 
-      addEvent(expand, 'scroll', onScroll);
-      addEvent(shrink, 'scroll', onScroll);
+      addEvent(expand, "scroll", onScroll);
+      addEvent(shrink, "scroll", onScroll);
     }
 
     forEachElement(element, function(elem) {
@@ -285,15 +283,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $(document).ready(function () {
     var a = 0;
-    
-    $("#Reviews").css("padding-bottom", $('#Com_1').height());
-    
+    $("#Reviews").css("padding-bottom", $("#Com_1").height());
     $(window).resize(function(){
-      new ResizeSensor(jQuery('#Com_1'), function(){
-        $("#Reviews").css("padding-bottom", $('#Com_1').height());
+      new ResizeSensor(jQuery("#Com_1"), function(){
+        $("#Reviews").css("padding-bottom", $("#Com_1").height());
       });
     });
-    
     $("#faq_id").click(function () {
         a = a + 1;
         if (a % 2 !== 0) {
@@ -354,14 +349,14 @@ $(document).ready(function () {
         $(".ui-card:nth-child(" + $odd + ")").next().addClass("next");
     }
     let c = 1;
-$('.ui-card').click(function() {
-  $slide = $('.active').width();
-  console.log($('.active').position().left);
-  if ($(this).hasClass('next')) {
-    $('.container').stop(false, true).animate({left: '-=' + $slide});
+$(".ui-card").click(function() {
+  $slide = $(".active").width();
+  console.log($(".active").position().left);
+  if ($(this).hasClass("next")) {
+    $(".container").stop(false, true).animate({left: "-=" + $slide});
     c+=1;
-  } else if ($(this).hasClass('prev')) {
-    $('.container').stop(false, true).animate({left: '+=' + $slide});
+  } else if ($(this).hasClass("prev")) {
+    $(".container").stop(false, true).animate({left: "+=" + $slide});
     c-=1;
   }
   if(c==0){
@@ -387,11 +382,10 @@ $('.ui-card').click(function() {
     $("#but_1").css("background", "white");
   }
 
-  $(this).removeClass('prev next');
-  $(this).siblings().removeClass('prev active next');
- 
-  $(this).addClass('active');
-  $(this).prev().addClass('prev');
-  $(this).next().addClass('next');
+  $(this).removeClass("prev next");
+  $(this).siblings().removeClass("prev active next");
+  $(this).addClass("active");
+  $(this).prev().addClass("prev");
+  $(this).next().addClass("next");
 });
 });
