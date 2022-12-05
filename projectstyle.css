@@ -936,6 +936,17 @@ li{
     #Label_4 br {
         display: none;
     }
+	
+    #h1_com{
+        font-size: 20px;
+        text-align: left;
+        margin-top: 25px;
+    }
+
+    #p_new{
+        font-size: 14px;
+        text-align: left;
+    }
 }
 
 @media (min-width: 560px) {
