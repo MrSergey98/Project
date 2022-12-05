@@ -78,14 +78,16 @@ var g1;
 
       var i, j;
       this.call = function() {
-        for (i = 0, j = q.length; i < j; i++) {
+        i = 0;
+        for (j = q.length; i < j; i+=1) {
           q[i].call();
         }
       };
 
       this.remove = function(ev) {
         var newQueue = [];
-        for (i = 0, j = q.length; i < j; i++) {
+        i = 0;
+        for (j = q.length; i < j; i+=1) {
           if (q[i] !== ev) newQueue.push(q[i]);
         }
         q = newQueue;
