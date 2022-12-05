@@ -361,6 +361,9 @@ li{
 
 
 @media (max-width: 560px) {
+    .pod-drupal-flex > h1 {
+        font-size: 30px;
+    }
     .exp_new {
         margin-top: 15px;
         padding: 0;
@@ -950,6 +953,9 @@ li{
 }
 
 @media (min-width: 560px) {
+    .pod-drupal-flex > h1 {
+        font-size: 50px;
+    }
 
     #Rate_mob{
         display: none;
