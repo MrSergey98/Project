@@ -83,13 +83,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function Mes(){
+    
+
     fetch('https://formcarry.com/s/AWKlN83z8', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({name: 'Alex', surname: 'Moran'})
     })
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
+    .then(response => console.log(response), Good())
+    .catch(error => console.log(error), Err())
+}
+
+function Good(){
+
+}
+
+function Err(){
+
 }
 
 
