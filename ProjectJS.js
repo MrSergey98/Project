@@ -82,6 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+function Mes(){
+    fetch('https://formcarry.com/s/AWKlN83z8', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({name: 'Alex', surname: 'Moran'})
+    })
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+}
 
 
 $(document).ready(function () {
@@ -192,4 +201,31 @@ $(document).ready(function () {
         $(this).prev().addClass("prev");
         $(this).next().addClass("next");
     });
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+          errors: [],
+          name: null,
+        },
+        methods: {
+          checkForm: function (e) {
+            if (this.name && this.age) {
+              alert
+            }
+      
+            this.errors = [];
+      
+            if (!this.name) {
+              this.errors.push('Требуется указать имя.');
+            }
+            if (!this.age) {
+              this.errors.push('Требуется указать возраст.');
+            }
+      
+            e.preventDefault();
+          }
+        }
+      });
+
 });
