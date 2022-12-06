@@ -71,6 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
     adm.addEventListener("click", Admin_mobile);
     abm = document.getElementById("About-mobile");
     abm.addEventListener("click", About_mobile);
+    $("#form_btn").click(function () {
+        $(".MyOverlay").show(300);
+        $("#dop_form").show(300);
+    });
+    $(".MyOverlay").click(function () {
+        $(".MyOverlay").hide(300);
+        $("#dop_form").hide(300);
+    });
 });
 
 
