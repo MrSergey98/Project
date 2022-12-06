@@ -967,12 +967,14 @@ li{
         position: fixed;
         bottom: 15px;
         right: 15px;
-        width: 300px;
+        width: 200px;
         height: 50px;
         font-size: 25px;
         border: solid 1px black;
-        border-radius: 15px;
-        background: rgb(114, 255, 114);
+        border-radius: 20px;
+        background: rgb(231, 80, 57);
+        color: white;
+        font-size: 20px;
     }
     .MyOverlay {
         display: none;
@@ -985,12 +987,12 @@ li{
     #dop_form {
         display: none;
         z-index: 101;
-        left: 200px;
-        top: 25%;
-        left: 25%;
-        width: 710px;
-        height: 500px;
-        background: white;
+        width: 40vw;
+        left: 30vw;
+        top: 15vh;
+        height: 70vh;
+        background: rgb(28, 30, 32);
+        opacity: 1;
         border:solid 1px red;
         border-radius: 15px;
     }
