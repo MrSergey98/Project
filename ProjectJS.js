@@ -82,13 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function Mes(){
-    
-
+function Mes(name, number, email, message){
     fetch('https://formcarry.com/s/AWKlN83z8', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({name: 'Alex', surname: 'Moran'})
+    body: JSON.stringify({name: name, number: number, email:email, message: message})
     })
     .then(response => console.log(response), Good())
     .catch(error => console.log(error), Err())
@@ -217,25 +215,67 @@ $(document).ready(function () {
         data: {
           errors: [],
           name: null,
+          number: null,
+          email: null,
+          message: null,
+          checkbox: null
         },
         methods: {
-          checkForm: function (e) {
-            if (this.name && this.age) {
-              alert
-            }
-      
+          checkForm: function (e) {     
             this.errors = [];
       
             if (!this.name) {
               this.errors.push('Требуется указать имя.');
             }
-            if (!this.age) {
-              this.errors.push('Требуется указать возраст.');
+            if (!this.number) {
+              this.errors.push('Требуется указать номер.');
             }
-      
+            if (!this.email) {
+                this.errors.push('Требуется указать email.');
+            }
+            if (!this.message) {
+                this.errors.push('Требуется написать комменатарий.');
+            }
+            if (!this.checkbox) {
+                this.errors.push('Требуется согласие на обработку песрональных данных.');
+            }
+            if(this.errors.length>0){
+                if(this.errors.length === 1){
+                    $("#dop_form").css("height", "84vh");
+                    $("#dop_form").css("top", "8vh");
+                }
+                else if(this.errors.length === 2){
+                    $("#dop_form").css("height", "88vh");
+                    $("#dop_form").css("top", "6vh");
+                }
+                else if(this.errors.length === 3){
+                    $("#dop_form").css("height", "90vh");
+                    $("#dop_form").css("top", "5vh");
+                }
+                else if(this.errors.length === 4){
+                    $("#dop_form").css("height", "92vh");
+                    $("#dop_form").css("top", "4vh");
+                }
+                else if(this.errors.length === 5){
+                    $("#dop_form").css("height", "94vh");
+                    $("#dop_form").css("top", "3vh");
+                }
+            }
+            if(this.errors.length === 0){
+                $("#dop_form").css("height", "70vh");
+                $("#dop_form").css("top", "15vh");
+            }
+            if (this.name && this.number && this.email  && this.message  && this.checkbox) {
+                Mes(this.name, this.number, this.email, this.message);
+                this.name = null;
+                this.number = null;
+                this.email = null;
+                this.message = null;
+                this.checkbox = null;
+            } 
             e.preventDefault();
           }
         }
-      });
+      });  
 
 });
