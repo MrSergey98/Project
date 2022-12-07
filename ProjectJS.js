@@ -75,13 +75,46 @@ document.addEventListener("DOMContentLoaded", function () {
         openForm();
         $(".MyOverlay").show(300);
         $("#dop_form").show(300);
+        if (localStorage.getItem("name").length > 0) {
+            document.querySelector('#form_2_name').value = localStorage.getItem("name");
+        }
+        if (localStorage.getItem("number").length > 0) {
+            document.getElementById("number_polz").value = localStorage.getItem("number");
+        }
+        if (localStorage.getItem("email").length > 0) {
+            document.getElementById("email_polz").value = localStorage.getItem("email");
+        }
+        if (localStorage.getItem("mes").length > 0) {
+            document.getElementById("message_polz").value = localStorage.getItem("mes");
+        }
+        if (localStorage.getItem("check") === "true") {
+            document.getElementById("checkbox_polz").checked = true;
+        }
     });
+
     $(".MyOverlay").click(function () {
         openHome();
         $(".MyOverlay").hide(300);
         $("#dop_form").hide(300);
     });
 });
+
+function Local(){
+    var nam = $("#form_2_name").val();
+    var num = $("#number_polz").val();
+    var email = $("#email_polz").val();
+    var mes = $("#message_polz").val();
+    var check = $("#checkbox_polz").prop("checked");
+    localStorage.setItem("name", nam);
+    localStorage.setItem("number", num);
+    localStorage.setItem("email", email);
+    localStorage.setItem("mes", mes);
+    if (check) {
+        localStorage.setItem("check", true);
+    } else {
+        localStorage.setItem("check", false);
+    }
+}
 
 
 function Mes(name, number, email, message){
@@ -97,7 +130,7 @@ function Mes(name, number, email, message){
 
 function Good(response){
     console.log(response);
-
+    localStorage.clear();
 
 }
 
@@ -123,6 +156,7 @@ addEventListener("popstate", function () {
         $(".MyOverlay").hide(300);
         $("#dop_form").hide(300);
 }, false);
+
 
 
 $(document).ready(function () {
@@ -301,5 +335,6 @@ $(document).ready(function () {
           }
         }
       });
+
     
 });
