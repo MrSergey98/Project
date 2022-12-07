@@ -72,10 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
     abm = document.getElementById("About-mobile");
     abm.addEventListener("click", About_mobile);
     $("#form_btn").click(function () {
+        openForm();
         $(".MyOverlay").show(300);
         $("#dop_form").show(300);
     });
     $(".MyOverlay").click(function () {
+        openHome();
         $(".MyOverlay").hide(300);
         $("#dop_form").hide(300);
     });
@@ -94,15 +96,33 @@ function Mes(name, number, email, message){
 }
 
 function Good(response){
+    console.log(response);
+
 
 }
 
 function Err(error){
-
+    console.log(error);
 
     
     alert("Ваше сообщение не отправлено. Попробуйте ещё раз!");
 }
+
+function openForm() {
+    history.pushState({page: 2}, "Form", "?form");
+    return false;
+}
+
+function openHome() {
+    history.replaceState({page: 1}, "Home", "?home");
+    return false;
+}
+
+addEventListener("popstate", function () {
+    openHome();
+        $(".MyOverlay").hide(300);
+        $("#dop_form").hide(300);
+}, false);
 
 
 $(document).ready(function () {
@@ -281,6 +301,5 @@ $(document).ready(function () {
           }
         }
       });
-
     
 });
