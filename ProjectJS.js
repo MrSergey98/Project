@@ -83,21 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function Mes(name, number, email, message){
+
     fetch('https://formcarry.com/s/AWKlN83z8', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({name: name, number: number, email:email, message: message})
     })
-    .then(response => console.log(response), Good())
-    .catch(error => console.log(error), Err())
+    .then(response => Good(response))
+    .catch(error => Err(error))
 }
 
-function Good(){
+function Good(response){
 
 }
 
-function Err(){
+function Err(error){
 
+
+    
+    alert("Ваше сообщение не отправлено. Попробуйте ещё раз!");
 }
 
 
@@ -276,6 +280,7 @@ $(document).ready(function () {
             e.preventDefault();
           }
         }
-      });  
+      });
 
+    
 });
