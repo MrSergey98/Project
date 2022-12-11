@@ -10,16 +10,15 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="ProjectJS.js"></script>
   <title>Проект</title>
 </head>
 <body>
     <div id="dop_form">
       <h1 style="text-align: center; font-size: 22px; margin-top: 15px; color: white; margin-bottom: 20px;">Заполните форму</h1>
-        <form id="app" @submit="checkForm" action="https://formcarry.com/s/AWKlN83z8" method="POST" accept-charset="UTF-8" style="width: calc(25vw - 40px); height: 100%; margin-left: calc(7vw);">
+        <form name="dop_form" id="app" @submit="checkForm" action="https://formcarry.com/s/AWKlN83z8" method="POST" accept-charset="UTF-8" style="width: calc(25vw - 40px); height: 100%; margin-left: calc(7vw);">
           <p v-if="errors.length" style="color: white; margin-top: 0px; margin-bottom: 10px;">
             <b>Пожалуйста исправьте указанные ошибки:</b>
             <ul style="color: rgb(255, 0, 0); margin-top: 0px;">
@@ -51,7 +50,7 @@
                 <label id="Label_3" style="color: rgb(121, 135,146); width: 200px;"> Отправляя заявку, я даю согласие на <a style="color: red;">обработку своих персональных данных</a>.</label>  
               </div>
           </div>
-      
+
           <p style="text-align: center;">
             <input id="Lete" type="submit" value="Отправить" style="background-color: rgb(241, 77,52); color: white; width: 25vw; font-size: 17px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; border: 1px solid rgba(256, 256, 256, 0.3);">
           </p>

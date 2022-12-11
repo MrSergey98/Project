@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function Mes(name, number, email, message){
+    /*Блокировка кнопки*/ 
+    changeBtn();
+
 
     fetch('https://formcarry.com/s/AWKlN83z8', {
     method: 'POST',
@@ -98,14 +101,17 @@ function Mes(name, number, email, message){
 function Good(response){
     console.log(response);
 
-
+    /*Разблокировка кнопки*/
+    changeBtn();
 }
 
 function Err(error){
     console.log(error);
-
     
+    /*Разблокировка кнопки*/
+    changeBtn();
     alert("Ваше сообщение не отправлено. Попробуйте ещё раз!");
+
 }
 
 function openForm() {
@@ -274,7 +280,7 @@ $(document).ready(function () {
             }
         },
         methods: {
-          checkForm: function (e) {     
+          checkForm: function (e) {  
             this.errors = [];
       
             if (!this.name) {
@@ -332,3 +338,12 @@ $(document).ready(function () {
       });
 
 });
+function changeBtn() {
+    if ($("#Lete").css("opacity") != 0.2) {
+        $("#Lete").css("pointer-events", "none");
+        $("#Lete").css("opacity", "0.2"); 
+    } else { 
+        $("#Lete").css("pointer-events", "unset");
+        $("#Lete").css("opacity", "1"); 
+    }
+}
