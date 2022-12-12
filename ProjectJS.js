@@ -77,6 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $("#dop_form").show(300);
     });
     $(".MyOverlay").click(function () {
+        $("#mess_good").css("display", "none");
+        $("#mess_error").css("display", "none");
         openHome();
         $(".MyOverlay").hide(300);
         $("#dop_form").hide(300);
@@ -100,17 +102,20 @@ function Mes(name, number, email, message){
 
 function Good(response){
     console.log(response);
-
+    $("#mess_good").css("display", "block");
+    $("#dop_form").css("height", "75vh");
+    $("#dop_form").css("top", "12vh");
     /*Разблокировка кнопки*/
     changeBtn();
 }
 
 function Err(error){
     console.log(error);
-    
+    $("#mess_error").css("display", "block");
+    $("#dop_form").css("height", "75vh");
+    $("#dop_form").css("top", "12vh");
     /*Разблокировка кнопки*/
     changeBtn();
-    alert("Ваше сообщение не отправлено. Попробуйте ещё раз!");
 
 }
 
@@ -281,6 +286,8 @@ $(document).ready(function () {
         },
         methods: {
           checkForm: function (e) {  
+            $("#mess_good").css("display", "none");
+            $("#mess_error").css("display", "none");
             this.errors = [];
       
             if (!this.name) {
@@ -330,7 +337,7 @@ $(document).ready(function () {
                 this.number="";
                 this.email="";
                 this.message="";
-                this.checkbox=null;
+                this.checkbox=false;
             } 
             e.preventDefault();
           }
