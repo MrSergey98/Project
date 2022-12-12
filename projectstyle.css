@@ -915,12 +915,14 @@ li{
         margin-bottom: 15px;
     }
 
-    #Form button {
-        width: 100%;
+    #Lete_1  {
+        width: calc(50vw);
         font-size: 10px;
         height: 40px;
         margin-bottom: 45px;
     }
+
+
 
     #Sozdatel {
         padding-top: 20px;
@@ -965,6 +967,11 @@ li{
 
 @media (min-width: 560px) {
     #mess_good, #mess_error{
+        display: none;
+    }
+
+
+    #mess_good_1, #mess_error_1, #no_data{
         display: none;
     }
 
