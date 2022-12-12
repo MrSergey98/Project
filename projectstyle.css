@@ -964,6 +964,10 @@ li{
 }
 
 @media (min-width: 560px) {
+    #mess_good, #mess_error{
+        display: none;
+    }
+
     #form_btn {
         z-index: 99;
         position: fixed;
