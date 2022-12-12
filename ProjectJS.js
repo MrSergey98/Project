@@ -91,7 +91,7 @@ function Mes(name, number, email, message){
     changeBtn();
 
 
-    fetch('https://formcarry.com/s/AWKlN83z8', {
+    fetch('https://formcarry.com/s/t0cMGUzNR', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({name: name, number: number, email:email, message: message})
@@ -333,6 +333,79 @@ $(document).ready(function () {
             }
             if (this.name && this.number && this.email  && this.message && this.checkbox) {
                 Mes(this.name, this.number, this.email, this.message);
+                this.name="";
+                this.number="";
+                this.email="";
+                this.message="";
+                this.checkbox=false;
+            } 
+            e.preventDefault();
+          }
+        }
+      });
+
+
+    const Form = new Vue({
+        el: '#Form',
+        data: {
+          name: null,
+          number: null,
+          email: null,
+          message: null,
+          checkbox: null
+        },
+        mounted() {
+            if (localStorage.name) {
+              this.name = localStorage.name;
+            }
+            if(localStorage.number){
+                this.number=localStorage.number;
+            }
+            if(localStorage.email){
+                this.email=localStorage.email;
+            }
+            if(localStorage.message){
+                this.message=localStorage.message;
+            }
+          },
+        watch: {
+            name(newName) {
+              localStorage.name = newName;
+            },
+            number(newNumber){
+                localStorage.number = newNumber;
+            },
+            email(newEmail){
+                localStorage.email = newEmail;
+            },
+            message(newMessage){
+                localStorage.message = newMessage;
+            }
+        },
+        methods: {
+          checkForm: function (e) { 
+            $("#no_data").css("display", "none");
+            $("#mess_good_1").css("display", "none");
+            $("#mess_error_1").css("display", "none");
+            if(!this.name || !this.number || !this.email || !this.message || !this.checkbox){
+                $("#no_data").css("display", "block");
+            }
+            if (this.name && this.number && this.email  && this.message && this.checkbox) {
+                $("#no_data").css("display", "none");
+                fetch('https://formcarry.com/s/t0cMGUzNR', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                body: JSON.stringify({name: this.name, number: this.number, email: this.email, message: this.message})
+                })
+                .then(function(response){
+                    console.log(response);
+                    $("#mess_good_1").css("display", "block");
+                })
+                .catch(function(error){
+                    console.log(error);
+                    $("#mess_error_1").css("display", "block");
+
+                })
                 this.name="";
                 this.number="";
                 this.email="";
