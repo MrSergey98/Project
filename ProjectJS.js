@@ -11,6 +11,27 @@ var window;
 var ResizeSensor;
 var jQuery;
 
+function animate({timing, draw, duration}) {
+
+    let start = performance.now();
+  
+    requestAnimationFrame(function animate(time) {
+      // timeFraction изменяется от 0 до 1
+      let timeFraction = (time - start) / duration;
+      if (timeFraction > 1) timeFraction = 1;
+  
+      // вычисление текущего состояния анимации
+      let progress = timing(timeFraction);
+  
+      draw(progress); // отрисовать её
+  
+      if (timeFraction < 1) {
+        requestAnimationFrame(animate);
+      }
+  
+    });
+}
+
 function Admin_menu_on() {
     $("#Admin-menu").show(300);
 }
@@ -73,15 +94,46 @@ document.addEventListener("DOMContentLoaded", function () {
     abm.addEventListener("click", About_mobile);
     $("#form_btn").click(function () {
         openForm();
-        $(".MyOverlay").show(300);
-        $("#dop_form").show(300);
+        
+        animate({
+            duration: 500,
+            timing: function circ(timeFraction) {
+              return 1 - Math.sin(Math.acos(timeFraction));
+            },
+            draw: function(progress) {
+              $(".MyOverlay").css("right", 15-progress*15+"px");
+              $(".MyOverlay").css("bottom", 15-progress*15+"px");
+              $(".MyOverlay").css("width",  progress * 100 + "%");
+              $(".MyOverlay").css("height",  progress * 100 + "%");
+              $("#dop_form").css("width", progress * 40 + "vw");
+              $("#dop_form").css("height", progress * 70 + "vh");
+              document.querySelector("#dop_form").style.border = "solid " + progress +"px "+ "red";
+            }
+          });
+    
+
+
     });
     $(".MyOverlay").click(function () {
         $("#mess_good").css("display", "none");
         $("#mess_error").css("display", "none");
         openHome();
-        $(".MyOverlay").hide(300);
-        $("#dop_form").hide(300);
+
+        animate({
+            duration: 500,
+            timing: function circ(timeFraction) {
+              return 1 - Math.sin(Math.acos(timeFraction));
+            },
+            draw: function(progress) {
+              $(".MyOverlay").css("right", progress*15+"px");
+              $(".MyOverlay").css("bottom", progress*15+"px");
+              $(".MyOverlay").css("width",  (1- progress) * 100 + "%");
+              $(".MyOverlay").css("height",  (1 - progress) * 100 + "%");
+              $("#dop_form").css("width", (1- progress) * 40 + "vw");
+              $("#dop_form").css("height", (1- progress) * 70 + "vh");
+              document.querySelector("#dop_form").style.border = "solid " + (1-progress) +"px "+ "red";
+            }
+          });
     });
 });
 
@@ -353,4 +405,36 @@ function changeBtn() {
         $("#Lete").css("pointer-events", "unset");
         $("#Lete").css("opacity", "1"); 
     }
+}
+
+function animate({timing, draw, duration}) {
+
+    let start = performance.now();
+  
+    requestAnimationFrame(function animate(time) {
+      // timeFraction изменяется от 0 до 1
+      let timeFraction = (time - start) / duration;
+      if (timeFraction > 1) timeFraction = 1;
+  
+      // вычисление текущего состояния анимации
+      let progress = timing(timeFraction);
+  
+      draw(progress); // отрисовать её
+  
+      if (timeFraction < 1) {
+        requestAnimationFrame(animate);
+      }
+  
+    });
+}
+function draw_on() {
+    if($(".MyOverlay").css("width") === (100+"%")) {
+        return;
+    }
+    var tek = $(".MyOverlay").css("width");
+    requestAnimationFrame(draw_on);
+    $(".MyOverlay").css("width", tek+(10+'%'));
+}
+function draw_off() {
+
 }

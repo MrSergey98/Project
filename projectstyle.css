@@ -983,23 +983,25 @@ li{
         font-size: 20px;
     }
     .MyOverlay {
-        display: none;
+        display: block;
         z-index: 100;
         position: fixed;
-        width: 100%;
-        height: 100%;
+        width: 0;
+        height: 0;
         background: rgba(0, 0, 0, 0.755);
+        right: 15px;
+        bottom: 15px;
     }
     #dop_form {
-        display: none;
+        display: block;
+        position: fixed;
         z-index: 101;
-        width: 40vw;
-        left: 30vw;
-        top: 15vh;
-        height: 70vh;
+        width: 0;/*40vw*/
+        right: 15px;/*30vw left*/
+        bottom: 15px;/*15vh top*/
+        height: 0;/*70vh*/
         background: rgb(28, 30, 32);
-        opacity: 1;
-        border:solid 1px red;
+        border:solid 0px red;
         border-radius: 15px;
     }
     
