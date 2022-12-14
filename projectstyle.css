@@ -246,6 +246,9 @@ h1 {
     padding-left: 30px;
 }
 @media(max-width: 560px) {
+.MyOverlay{
+    display: none;
+}
 #dop_form {
     display: none;
 }
@@ -959,6 +962,7 @@ li{
 }
 
 @media (min-width: 560px) {
+    
     #mess_good, #mess_error{
         display: none;
     }
@@ -1005,6 +1009,7 @@ li{
         border-radius: 15px;
     }
     #close_overlay_btn {
+        display: block;
         opacity: 0;
         margin-top: 15px;
         width: 200px;
