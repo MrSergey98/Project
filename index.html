@@ -17,12 +17,7 @@
 </head>
 <body>
     
-    <div class="MyOverlay">
-      <div id="close_overlay">
-        <button id="close_overlay_btn">
-          Закрыть форму
-        </button>
-      </div>
+    <span class="MyOverlay" name="MyOverlay">
       <div id="dop_form">
         <h1 style="text-align: center; font-size: 22px; margin-top: 15px; color: white; margin-bottom: 20px;">Заполните форму</h1>
           <form name="dop_form" id="app" @submit="checkForm" action="https://formcarry.com/s/t0cMGUzNR" method="POST" accept-charset="UTF-8" style="width: calc(25vw - 40px); height: 100%; margin-left: calc(7vw);">
@@ -65,7 +60,7 @@
             </p>
          </form>
       </div>
-    </div>
+    </span>
     <button id="form_btn">Показать форму</button>
 
     <div class="mobile-menu" style="position: fixed; z-index: 15; bottom: 0;">

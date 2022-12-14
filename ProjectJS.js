@@ -112,27 +112,30 @@ document.addEventListener("DOMContentLoaded", function () {
           });
     });
 
-    $("#close_overlay_btn").click(function () {
-        $("#mess_good").css("display", "none");
-        $("#mess_error").css("display", "none");
-        openHome();
-        animate({
-            duration: 400,
-            timing: function circ(timeFraction) {
-              return 1 - Math.sin(Math.acos(timeFraction));
-            },
-            draw: function(progress) {
-              $(".MyOverlay").css("right", progress*15+"px");
-              $(".MyOverlay").css("bottom", progress*15+"px");
-              $(".MyOverlay").css("width",  (1- progress) * 100 + "%");
-              $(".MyOverlay").css("height",  (1 - progress) * 100 + "%");
-              $("#dop_form").css("opacity", 1-progress);
-              $("#close_overlay_btn").css("opacity", 1-progress);
-            }
-          });
+    $(".MyOverlay").click(function (event) {
+        
+        if((String)(event.target) === "[object HTMLSpanElement]") 
+        {
+            $("#mess_good").css("display", "none");
+            $("#mess_error").css("display", "none");
+            openHome();
+            animate({
+                duration: 400,
+                timing: function circ(timeFraction) {
+                return 1 - Math.sin(Math.acos(timeFraction));
+                },
+                draw: function(progress) {
+                $(".MyOverlay").css("right", progress*15+"px");
+                $(".MyOverlay").css("bottom", progress*15+"px");
+                $(".MyOverlay").css("width",  (1- progress) * 100 + "%");
+                $(".MyOverlay").css("height",  (1 - progress) * 100 + "%");
+                $("#dop_form").css("opacity", 1-progress);
+                $("#close_overlay_btn").css("opacity", 1-progress);
+                }
+            });
+        }
     });
 });
-
 
 function Mes(name, number, email, message){
     /*Блокировка кнопки*/ 
