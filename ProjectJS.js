@@ -92,11 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
     adm.addEventListener("click", Admin_mobile);
     abm = document.getElementById("About-mobile");
     abm.addEventListener("click", About_mobile);
+
     $("#form_btn").click(function () {
         openForm();
         
         animate({
-            duration: 500,
+            duration: 700,
             timing: function circ(timeFraction) {
               return 1 - Math.sin(Math.acos(timeFraction));
             },
@@ -105,22 +106,18 @@ document.addEventListener("DOMContentLoaded", function () {
               $(".MyOverlay").css("bottom", 15-progress*15+"px");
               $(".MyOverlay").css("width",  progress * 100 + "%");
               $(".MyOverlay").css("height",  progress * 100 + "%");
-              $("#dop_form").css("width", progress * 40 + "vw");
-              $("#dop_form").css("height", progress * 70 + "vh");
-              document.querySelector("#dop_form").style.border = "solid " + progress +"px "+ "red";
+              $("#dop_form").css("opacity", progress);
+              $("#close_overlay_btn").css("opacity", progress);
             }
           });
-    
-
-
     });
-    $(".MyOverlay").click(function () {
+
+    $("#close_overlay_btn").click(function () {
         $("#mess_good").css("display", "none");
         $("#mess_error").css("display", "none");
         openHome();
-
         animate({
-            duration: 500,
+            duration: 400,
             timing: function circ(timeFraction) {
               return 1 - Math.sin(Math.acos(timeFraction));
             },
@@ -129,9 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
               $(".MyOverlay").css("bottom", progress*15+"px");
               $(".MyOverlay").css("width",  (1- progress) * 100 + "%");
               $(".MyOverlay").css("height",  (1 - progress) * 100 + "%");
-              $("#dop_form").css("width", (1- progress) * 40 + "vw");
-              $("#dop_form").css("height", (1- progress) * 70 + "vh");
-              document.querySelector("#dop_form").style.border = "solid " + (1-progress) +"px "+ "red";
+              $("#dop_form").css("opacity", 1-progress);
+              $("#close_overlay_btn").css("opacity", 1-progress);
             }
           });
     });
@@ -499,15 +495,4 @@ function animate({timing, draw, duration}) {
       }
   
     });
-}
-function draw_on() {
-    if($(".MyOverlay").css("width") === (100+"%")) {
-        return;
-    }
-    var tek = $(".MyOverlay").css("width");
-    requestAnimationFrame(draw_on);
-    $(".MyOverlay").css("width", tek+(10+'%'));
-}
-function draw_off() {
-
 }
