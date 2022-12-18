@@ -10,7 +10,7 @@ var g1;
 var window;
 var ResizeSensor;
 var jQuery;
-
+/*110rightx45bottom*/
 
 function Admin_menu_on() {
     $("#Admin-menu").show(300);
@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
               return 1 - Math.sin(Math.acos(timeFraction));
             },
             draw: function(progress) {
-              $(".MyOverlay").css("right", 15-progress*15+"px");
-              $(".MyOverlay").css("bottom", 15-progress*15+"px");
+              $(".MyOverlay").css("right", 110-progress*110+"px");
+              $(".MyOverlay").css("bottom", 45-progress*45+"px");
               $(".MyOverlay").css("width",  progress * 100 + "%");
               $(".MyOverlay").css("height",  progress * 100 + "%");
               $("#dop_form").css("opacity", progress);
@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return 1 - Math.sin(Math.acos(timeFraction));
                 },
                 draw: function(progress) {
-                $(".MyOverlay").css("right", progress*15+"px");
-                $(".MyOverlay").css("bottom", progress*15+"px");
+                $(".MyOverlay").css("right", progress*110+"px");
+                $(".MyOverlay").css("bottom", progress*45+"px");
                 $(".MyOverlay").css("width",  (1- progress) * 100 + "%");
                 $(".MyOverlay").css("height",  (1 - progress) * 100 + "%");
                 $("#dop_form").css("opacity", 1-progress);
