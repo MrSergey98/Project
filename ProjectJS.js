@@ -422,6 +422,7 @@ $(document).ready(function () {
                 $("#no_data").css("display", "block");
             }
             if (this.name && this.number && this.email  && this.message && this.checkbox) {
+                changeBtn_1();
                 $("#no_data").css("display", "none");
                 fetch('https://formcarry.com/s/t0cMGUzNR', {
                 method: 'POST',
@@ -429,10 +430,12 @@ $(document).ready(function () {
                 body: JSON.stringify({name: this.name, number: this.number, email: this.email, message: this.message})
                 })
                 .then(function(response){
+                    changeBtn_1();
                     console.log(response);
                     $("#mess_good_1").css("display", "block");
                 })
                 .catch(function(error){
+                    changeBtn_1();
                     console.log(error);
                     $("#mess_error_1").css("display", "block");
 
@@ -456,6 +459,16 @@ function changeBtn() {
     } else { 
         $("#Lete").css("pointer-events", "unset");
         $("#Lete").css("opacity", "1"); 
+    }
+}
+
+function changeBtn_1() {
+    if ($("#Lete_1").css("opacity") != 0.2) {
+        $("#Lete_1").css("pointer-events", "none");
+        $("#Lete_1").css("opacity", "0.2"); 
+    } else { 
+        $("#Lete_1").css("pointer-events", "unset");
+        $("#Lete_1").css("opacity", "1"); 
     }
 }
 
