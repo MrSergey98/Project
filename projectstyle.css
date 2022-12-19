@@ -212,7 +212,7 @@ h1 {
     max-width: calc(100% - 15px);
 }
 
-#form_btn:hover, #Lete {
+#form_btn:hover, #Lete, #Lete_1 {
     cursor: pointer;
 }
 /*---- Mobile settings ----*/
