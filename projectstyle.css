@@ -910,14 +910,13 @@ li{
         flex-direction: row;
         margin-bottom: 15px;
     }
-
+	
     #Lete_1  {
-        width: calc(50vw);
-        font-size: 10px;
+        width: 90vw;
+        font-size: 17px;
         height: 40px;
         margin-bottom: 45px;
     }
-
 
 
     #Sozdatel {
@@ -1430,7 +1429,14 @@ li{
         margin-top: 10px;
     }
 
-    #Form input {
+    #Lete_1  {
+        width: 30vw; 
+        height: 44px;
+        font-size: 17px;
+        margin-bottom: 45px;
+    }
+
+    #form_1_name, #number_polz_1, #email_polz_1 {
         width: calc(30vw - 40px);
         font-size: 17px;
         padding: 5px 20px;
