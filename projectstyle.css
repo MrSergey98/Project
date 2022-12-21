@@ -10,10 +10,6 @@ body {
     src: local('Montserrat Regular'), local('Montserrat-Regular'), url('http://hb.bizmrg.com/fonts/montserrat/400.woff2') format('woff2'), url('http://hb.bizmrg.com/fonts/montserrat/400.woff') format('woff');
 }
 
-#mess_good_1, #mess_error_1, #no_data{
-        display: none;
-}
-
 .fullscreen-bg {
     overflow: hidden;
     position: relative;
@@ -962,6 +958,10 @@ li{
         font-size: 14px;
         text-align: left;
     }
+
+    #mess_good_1, #mess_error_1, #no_data{
+        display: none;
+    }
 }
 
 @media (min-width: 560px) {
@@ -1476,5 +1476,8 @@ li{
     #Checkbox {
         margin-right: 10px;
         float: left;
+    }
+    #mess_good_1, #mess_error_1, #no_data{
+        display: none;
     }
 }
